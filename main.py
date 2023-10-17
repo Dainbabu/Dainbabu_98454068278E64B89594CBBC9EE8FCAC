@@ -1,53 +1,16 @@
-"""
-1! = 1 x 1
-2! = 2 x 1! --->2 x 1
-3! = 3 x 2! --->3 x 2 x 1
-.
-.
-10! = 10 x 9! ---> 10 x 9 x 8 x... x 1
-
-Formula - n x (n-1)!
-"""
+# 1.2 write a program that determines whether a year entered by user is a leap year or not using ifelif-else statements
 
 
-def fact_rec(n):
-  if n==0 or n==1:
-    return 1
+
+def isleapyear(year):
+  if(year % 4 == 0 and year %100 !=0) or year %400 == 0:
+    return True
   else:
-    return n*fact_rec(n-1)
+    return False
 
-number = 4
-res = fact_rec(number)
+year = int(input("Enter the year : "))
 
-print("The factorial of {} is {}.".format(number,res))
-
-
-
-
-
-
-
-# 1.1 Implement a recursive function to calculate the factorial of a given number.
-
-"""
-1! = 1 x 1
-2! = 2 x 1! --->2 x 1
-3! = 3 x 2! --->3 x 2 x 1
-.
-.
-10! = 10 x 9! ---> 10 x 9 x 8 x... x 1
-
-Formula - n x (n-1)!
-"""
-
-
-def fact_rec(n):
-  if n==0 or n==1:
-    return 1
-  else:
-    return n*fact_rec(n-1)
-
-number = int(input("Enter a value : "))
-res = fact_rec(number)
-
-print("The factorial of {} is {}.".format(number,res))
+if isleapyear(year):
+  print('{} is a leap year.'.format(year))
+else:
+  print('{} is not a leap year.'.format(year))
